@@ -2,12 +2,15 @@ import logging
 import re
 import asyncio
 import requests
+import os
+from dotenv import load_dotenv
 from telegram import Update
 from telegram.ext import ApplicationBuilder, ContextTypes, MessageHandler, filters
 
-# === GANTI BAGIAN INI ===
-BOT_TOKEN = "7540539304:AAHV4iTld7LWhPc_cQkG9Kf_JB8bsIerIDU"
-CMC_API_KEY = "9d7955ab-1109-4f6d-8391-54c7b15ba7f3"
+# Load .env
+load_dotenv()
+BOT_TOKEN = os.getenv("BOT_TOKEN")
+CMC_API_KEY = os.getenv("CMC_API_KEY")
 
 # Setup logging
 logging.basicConfig(level=logging.INFO)
@@ -25,7 +28,7 @@ def get_token_price(symbol: str):
     }
     response = requests.get(url, headers=headers, params=params)
     data = response.json()
-    
+
     if "data" in data and symbol.upper() in data["data"]:
         return data["data"][symbol.upper()]["quote"]["USD"]["price"]
     return None
