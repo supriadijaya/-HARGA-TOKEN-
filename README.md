@@ -1,4 +1,6 @@
 # bottelegram
-cek harga token secara live
-auto delete 1 minute
-Join my chanel tegeram : https://t.me/AIRDROPRSIND123
+
+Cek harga token secara live  
+⏳ Auto delete dalam 1 menit  
+
+📢 Join channel Telegram: [https://t.me/AIRDROPRSIND123](https://t.me/AIRDROPRSIND123)
