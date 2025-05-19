@@ -74,9 +74,9 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
             await context.bot.delete_message(chat_id=sent.chat_id, message_id=sent.message_id)
 
 # Jalankan bot
-app = ApplicationBuilder().token(BOT_TOKEN).build()
-app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_message))
+if __name__ == "__main__":
+    app = ApplicationBuilder().token(BOT_TOKEN).build()
+    app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_message))
 
-print("🤖 Bot jalan... Ketik: 1 bnb / 0.5 sol / 1 doge dsb")
-app.run_polling()
-
+    print("🤖 Bot jalan... Ketik: 1 bnb / 0.5 sol / 1 doge dsb")
+    app.run_polling()
